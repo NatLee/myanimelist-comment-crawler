@@ -1,0 +1,159 @@
+{
+ "data": {
+  "malId": 5114,
+  "url": "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood",
+  "title": "Fullmetal Alchemist: Brotherhood",
+  "titleEnglish": "Fullmetal Alchemist: Brotherhood",
+  "titleJapanese": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+  "titleSynonyms": [
+   "Hagane no Renkinjutsushi: Fullmetal Alchemist",
+   "Fullmetal Alchemist (2009)",
+   "FMA",
+   "FMAB"
+  ],
+  "imageUrl": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
+  "images": {
+   "small": "https://cdn.myanimelist.net/images/anime/1208/94745t.jpg",
+   "medium": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
+   "large": "https://cdn.myanimelist.net/images/anime/1208/94745l.jpg"
+  },
+  "trailer": {
+   "youtubeId": "1ac3_YdSSy0",
+   "url": "https://www.youtube.com/watch?v=1ac3_YdSSy0",
+   "embedUrl": "https://www.youtube-nocookie.com/embed/1ac3_YdSSy0?enablejsapi=1&wmode=opaque&autoplay=1"
+  },
+  "synopsis": "After a horrific alchemy experiment goes wrong in the Elric ...",
+  "background": null,
+  "type": "TV",
+  "episodes": 64,
+  "status": "Finished Airing",
+  "airing": false,
+  "aired": {
+   "from": "2009-04-05",
+   "to": "2010-07-04",
+   "string": "Apr 5, 2009 to Jul 4, 2010"
+  },
+  "season": "spring",
+  "year": 2009,
+  "broadcast": {
+   "day": "Sundays",
+   "time": "17:00",
+   "timezone": "JST",
+   "string": "Sundays at 17:00 (JST)"
+  },
+  "studios": [
+   {
+    "malId": 4,
+    "name": "Bones",
+    "url": "https://myanimelist.net/anime/producer/4/Bones"
+   }
+  ],
+  "producers": [
+   {
+    "malId": 17,
+    "name": "Aniplex",
+    "url": "https://myanimelist.net/anime/producer/17/Aniplex"
+   },
+   {
+    "malId": 58,
+    "name": "Square Enix",
+    "url": "https://myanimelist.net/anime/producer/58/Square_Enix"
+   },
+   {
+    "malId": 143,
+    "name": "Mainichi Broadcasting System",
+    "url": "https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System"
+   },
+   {
+    "malId": 1499,
+    "name": "Techno Sound",
+    "url": "https://myanimelist.net/anime/producer/1499/Techno_Sound"
+   }
+  ],
+  "licensors": [
+   {
+    "malId": 102,
+    "name": "Funimation",
+    "url": "https://myanimelist.net/anime/producer/102/Funimation"
+   },
+   {
+    "malId": 493,
+    "name": "Aniplex of America",
+    "url": "https://myanimelist.net/anime/producer/493/Aniplex_of_America"
+   }
+  ],
+  "genres": [
+   {
+    "malId": 1,
+    "name": "Action",
+    "url": "https://myanimelist.net/anime/genre/1/Action"
+   },
+   {
+    "malId": 2,
+    "name": "Adventure",
+    "url": "https://myanimelist.net/anime/genre/2/Adventure"
+   },
+   {
+    "malId": 8,
+    "name": "Drama",
+    "url": "https://myanimelist.net/anime/genre/8/Drama"
+   },
+   {
+    "malId": 10,
+    "name": "Fantasy",
+    "url": "https://myanimelist.net/anime/genre/10/Fantasy"
+   }
+  ],
+  "themes": [
+   {
+    "malId": 38,
+    "name": "Military",
+    "url": "https://myanimelist.net/anime/genre/38/Military"
+   }
+  ],
+  "demographics": [
+   {
+    "malId": 27,
+    "name": "Shounen",
+    "url": "https://myanimelist.net/anime/genre/27/Shounen"
+   }
+  ],
+  "duration": "24 min. per ep.",
+  "rating": "R - 17+ (violence & profanity)",
+  "score": 9.11,
+  "scoredBy": 2351621,
+  "rank": 2,
+  "popularity": 3,
+  "members": 3752360,
+  "favorites": 246784,
+  "source": "Manga",
+  "relations": [
+   {
+    "relation": "Adaptation",
+    "malId": 25,
+    "type": "manga",
+    "title": "Fullmetal Alchemist"
+   }
+  ],
+  "externalLinks": [
+   {
+    "name": "Official Site",
+    "url": "http://www.hagaren.jp/fa/"
+   }
+  ],
+  "streaming": [
+   {
+    "name": "Netflix",
+    "url": "https://click.justwatch.com/a?cx=eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uanVzdHdhdGNoL2NsaWNrb3V0X2NvbnRleHQvanNvbnNjaGVtYS8xLTMtMiIsImRhdGEiOnsicHJvdmlkZXIiOiJOZXRmbGl4IiwibW9uZXRpemF0aW9uVHlwZSI6ImZsYXRyYXRlIiwicHJlc2VudGF0aW9uVHlwZSI6ImhkIiwiY3VycmVuY3kiOiJHQlAiLCJwYXJ0bmVySWQiOjI0OTAsInByb3ZpZGVySWQiOjgsImNsaWNrb3V0VHlwZSI6Imp3LWNvbnRlbnQtcGFydG5lci1leHBvcnQtYXBpIn19LHsic2NoZW1hIjoiaWdsdTpjb20uanVzdHdhdGNoL3RpdGxlX2NvbnRleHQvanNvbnNjaGVtYS8xLTMtMCIsImRhdGEiOnsidGl0bGVJZCI6MjE0ODIsIm9iamVjdFR5cGUiOiJzaG93IiwiandFbnRpdHlJZCI6InRzMjE0ODIiLCJzZWFzb25OdW1iZXIiOjEsImp3UmF3RW50aXR5SWQiOiJ0c3MyNTkyMSJ9fV19&r=https%3A%2F%2Fwww.netflix.com%2Ftitle%2F70204981&uct_country=gb",
+    "available": true
+   }
+  ],
+  "fetchedAt": "2026-11-03T22:40:44.503Z"
+ },
+ "meta": {
+  "cached": true,
+  "stale": false,
+  "refreshFailed": false,
+  "fetchedAt": "2026-11-03T22:40:44.503Z"
+ }
+}

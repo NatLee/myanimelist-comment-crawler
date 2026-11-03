@@ -1,0 +1,140 @@
+{
+ "data": {
+  "malId": 11979,
+  "url": "https://myanimelist.net/anime/11979/Mahou_Shoujo_Madoka☆Magica_Movie_2__Eien_no_Monogatari",
+  "title": "Mahou Shoujo Madoka☆Magica Movie 2: Eien no Monogatari",
+  "titleEnglish": "Puella Magi Madoka Magica the Movie Part 2: Eternal",
+  "titleJapanese": "劇場版 魔法少女まどか☆マギカ 永遠の物語",
+  "titleSynonyms": [
+   "Mahou Shoujo Madoka Magika Movie 2",
+   "Magical Girl Madoka Magica Movie 2"
+  ],
+  "imageUrl": "https://cdn.myanimelist.net/images/anime/6/42265.jpg",
+  "images": {
+   "small": "https://cdn.myanimelist.net/images/anime/6/42265t.jpg",
+   "medium": "https://cdn.myanimelist.net/images/anime/6/42265.jpg",
+   "large": "https://cdn.myanimelist.net/images/anime/6/42265l.jpg"
+  },
+  "trailer": {
+   "youtubeId": "wfsX27B5Gxk",
+   "url": "https://www.youtube.com/watch?v=wfsX27B5Gxk",
+   "embedUrl": "https://www.youtube-nocookie.com/embed/wfsX27B5Gxk?enablejsapi=1&wmode=opaque&autoplay=1"
+  },
+  "synopsis": "Though Sayaka Miki's wish was fulfilled, the unforeseen cons...",
+  "background": "Mahou Shoujo Madoka☆Magica Movie 2: Eien no Monogatari cover...",
+  "type": "Movie",
+  "episodes": 1,
+  "status": "Finished Airing",
+  "airing": false,
+  "aired": {
+   "from": "2012-10-13",
+   "to": null,
+   "string": "Oct 13, 2012"
+  },
+  "season": null,
+  "year": null,
+  "broadcast": {
+   "day": null,
+   "time": null,
+   "timezone": null,
+   "string": null
+  },
+  "studios": [
+   {
+    "malId": 44,
+    "name": "Shaft",
+    "url": "https://myanimelist.net/anime/producer/44/Shaft"
+   }
+  ],
+  "producers": [
+   {
+    "malId": 17,
+    "name": "Aniplex",
+    "url": "https://myanimelist.net/anime/producer/17/Aniplex"
+   },
+   {
+    "malId": 143,
+    "name": "Mainichi Broadcasting System",
+    "url": "https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System"
+   },
+   {
+    "malId": 166,
+    "name": "Movic",
+    "url": "https://myanimelist.net/anime/producer/166/Movic"
+   },
+   {
+    "malId": 459,
+    "name": "Nitroplus",
+    "url": "https://myanimelist.net/anime/producer/459/Nitroplus"
+   },
+   {
+    "malId": 797,
+    "name": "Houbunsha",
+    "url": "https://myanimelist.net/anime/producer/797/Houbunsha"
+   }
+  ],
+  "licensors": [
+   {
+    "malId": 493,
+    "name": "Aniplex of America",
+    "url": "https://myanimelist.net/anime/producer/493/Aniplex_of_America"
+   }
+  ],
+  "genres": [
+   {
+    "malId": 8,
+    "name": "Drama",
+    "url": "https://myanimelist.net/anime/genre/8/Drama"
+   },
+   {
+    "malId": 41,
+    "name": "Suspense",
+    "url": "https://myanimelist.net/anime/genre/41/Suspense"
+   }
+  ],
+  "themes": [
+   {
+    "malId": 66,
+    "name": "Mahou Shoujo",
+    "url": "https://myanimelist.net/anime/genre/66/Mahou_Shoujo"
+   },
+   {
+    "malId": 40,
+    "name": "Psychological",
+    "url": "https://myanimelist.net/anime/genre/40/Psychological"
+   }
+  ],
+  "demographics": [],
+  "duration": "1 hr. 51 min.",
+  "rating": "PG-13 - Teens 13 or older",
+  "score": 8.38,
+  "scoredBy": 110469,
+  "rank": 256,
+  "popularity": 1289,
+  "members": 225122,
+  "favorites": 1125,
+  "source": "Original",
+  "relations": [
+   {
+    "relation": "Prequel",
+    "malId": 11977,
+    "type": "anime",
+    "title": "Mahou Shoujo Madoka☆Magica Movie 1: Hajimari no Monogatari"
+   }
+  ],
+  "externalLinks": [
+   {
+    "name": "Official Site",
+    "url": "http://www.madoka-magica.com/zenkouhen/"
+   }
+  ],
+  "streaming": [],
+  "fetchedAt": "2026-11-03T22:50:45.229Z"
+ },
+ "meta": {
+  "cached": false,
+  "stale": false,
+  "refreshFailed": false,
+  "fetchedAt": "2026-11-03T22:50:45.495Z"
+ }
+}

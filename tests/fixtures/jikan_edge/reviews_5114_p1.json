@@ -1,0 +1,89 @@
+{
+ "data": [
+  {
+   "username": "sample_user_1",
+   "imageUrl": "https://cdn.myanimelist.net/images/kaomoji_mal_white.png",
+   "date": "Oct 9, 2009",
+   "tag": "Recommended",
+   "score": 10,
+   "reviewText": "Sample review one, first paragraph.\n\nSecond paragraph that MAL cuts in the\n...\nmiddle of a sentence with a read more toggle.\n\nLast line of review one.",
+   "reviewId": 900001,
+   "url": "https://myanimelist.net/reviews.php?id=900001",
+   "isPreliminary": true,
+   "isSpoiler": false,
+   "episodesWatched": 26,
+   "chaptersRead": null,
+   "reactions": {
+    "overall": 222,
+    "nice": 214,
+    "loveIt": 1,
+    "funny": 1,
+    "confusing": 6,
+    "informative": 0,
+    "wellWritten": 0,
+    "creative": 0
+   }
+  },
+  {
+   "username": "sample_user_2",
+   "imageUrl": "https://cdn.myanimelist.net/images/kaomoji_mal_white.png",
+   "date": "Dec 16, 2015",
+   "tag": "Not Recommended",
+   "score": 4,
+   "reviewText": "Sample review two, short opening line.\n\nIt continues on this line and then the\n...\nhidden half of the text starts here.\n\nScore so far: 6/10.",
+   "reviewId": 900002,
+   "url": "https://myanimelist.net/reviews.php?id=900002",
+   "isPreliminary": false,
+   "isSpoiler": false,
+   "episodesWatched": null,
+   "chaptersRead": null,
+   "reactions": {
+    "overall": 316,
+    "nice": 173,
+    "loveIt": 22,
+    "funny": 51,
+    "confusing": 67,
+    "informative": 1,
+    "wellWritten": 1,
+    "creative": 1
+   }
+  },
+  {
+   "username": "sample_user_3",
+   "imageUrl": "https://cdn.myanimelist.net/images/kaomoji_mal_white.png",
+   "date": "Apr 7, 2015",
+   "tag": "Mixed Feelings",
+   "score": 7,
+   "reviewText": "Sample review three has mixed feelings.\n\nThe art is good but the\n...\npacing felt uneven to this sample reviewer.\n\nFinal words.",
+   "reviewId": 900003,
+   "url": "https://myanimelist.net/reviews.php?id=900003",
+   "isPreliminary": false,
+   "isSpoiler": false,
+   "episodesWatched": null,
+   "chaptersRead": null,
+   "reactions": {
+    "overall": 2209,
+    "nice": 2016,
+    "loveIt": 29,
+    "funny": 42,
+    "confusing": 72,
+    "informative": 10,
+    "wellWritten": 36,
+    "creative": 4
+   }
+  }
+ ],
+ "meta": {
+  "cached": false,
+  "stale": false,
+  "refreshFailed": false,
+  "fetchedAt": "2026-11-03T22:58:31.507Z",
+  "pagination": {
+   "page": 1,
+   "limit": 20,
+   "count": 3,
+   "total": null,
+   "hasNextPage": true
+  }
+ }
+}

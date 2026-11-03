@@ -1,0 +1,41 @@
+{
+ "data": [
+  {
+   "username": "sample_user_3",
+   "imageUrl": "https://cdn.myanimelist.net/images/kaomoji_mal_white.png",
+   "date": "Apr 7, 2015",
+   "tag": "Mixed Feelings",
+   "score": 7,
+   "reviewText": "Sample review three has mixed feelings.\n\nThe art is good but the\n...\npacing felt uneven to this sample reviewer.\n\nFinal words.",
+   "reviewId": 900004,
+   "url": "https://myanimelist.net/reviews.php?id=900004",
+   "isPreliminary": false,
+   "isSpoiler": false,
+   "episodesWatched": null,
+   "chaptersRead": null,
+   "reactions": {
+    "overall": 2209,
+    "nice": 2016,
+    "loveIt": 29,
+    "funny": 42,
+    "confusing": 72,
+    "informative": 10,
+    "wellWritten": 36,
+    "creative": 4
+   }
+  }
+ ],
+ "meta": {
+  "cached": false,
+  "stale": false,
+  "refreshFailed": false,
+  "fetchedAt": "2026-11-03T22:58:35.708Z",
+  "pagination": {
+   "page": 2,
+   "limit": 20,
+   "count": 1,
+   "total": null,
+   "hasNextPage": false
+  }
+ }
+}

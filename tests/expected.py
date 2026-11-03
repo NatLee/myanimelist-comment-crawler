@@ -1,0 +1,65 @@
+"""Expected rows for the saved pages (tests/fixtures), shared by the source tests."""
+
+from __future__ import annotations
+
+from tests.conftest import FMAB
+
+# Values as shown on the live pages on 2026-11-04. The 2023 parser returned the same values,
+# except "source" for 5114 (it returned "" whenever Source is a link).
+FMAB_INFO = {
+    "workId": "5114",
+    "url": FMAB.url,
+    "jpName": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+    "engName": "Fullmetal Alchemist: Brotherhood",
+    "synonymsName": "Hagane no Renkinjutsushi: Fullmetal Alchemist, Fullmetal Alchemist (2009), FMA, FMAB",
+    "workType": "TV",
+    "episodes": "64",
+    "status": "Finished Airing",
+    "aired": "Apr 5, 2009 to Jul 4, 2010",
+    "premiered": "Spring 2009",
+    "producer": "Aniplex, Square Enix, Mainichi Broadcasting System, Techno Sound",
+    "broadcast": "Sundays at 17:00 (JST)",
+    "licensors": "Funimation, Aniplex of America",
+    "studios": "Bones",
+    "genres": "Action, Adventure, Drama, Fantasy",
+    "themes": "Military",
+    "demographic": "Shounen",
+    "source": "Manga",
+    "duration": "24 min. per ep.",
+    "rating": "R - 17+ (violence & profanity)",
+    "score": "9.11",
+    "allRank": "#2",
+    "popularityRank": "#3",
+    "members": "3,752,360",
+    "favorites": "246,784",
+    "scoredByUser": "2351621",
+}
+MADOKA_URL = "https://myanimelist.net/anime/11979/Mahou_Shoujo_Madoka%E2%98%85Magica_Movie_2__Eien_no_Monogatari"
+MADOKA_INFO = {
+    "workId": "11979",
+    "url": MADOKA_URL,
+    "jpName": "劇場版 魔法少女まどか☆マギカ 永遠の物語",
+    "engName": "Puella Magi Madoka Magica the Movie Part 2: Eternal",
+    "synonymsName": "Mahou Shoujo Madoka Magika Movie 2, Magical Girl Madoka Magica Movie 2",
+    "workType": "Movie",
+    "episodes": "1",
+    "status": "Finished Airing",
+    "aired": "Oct 13, 2012",
+    "premiered": "",
+    "producer": "Aniplex, Mainichi Broadcasting System, Movic, Nitroplus, Houbunsha",
+    "broadcast": "",
+    "licensors": "Aniplex of America",
+    "studios": "Shaft",
+    "genres": "Drama, Suspense",
+    "themes": "Mahou Shoujo, Psychological",
+    "demographic": "",
+    "source": "Original",
+    "duration": "1 hr. 51 min.",
+    "rating": "PG-13 - Teens 13 or older",
+    "score": "8.38",
+    "allRank": "#256",
+    "popularityRank": "#1289",
+    "members": "225,122",
+    "favorites": "1,125",
+    "scoredByUser": "110469",
+}
