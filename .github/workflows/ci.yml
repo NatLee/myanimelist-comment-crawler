@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }} (${{ matrix.deps }} deps)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12", "3.14"]
+        deps: [latest]
+        include:
+          # The oldest versions requirements.txt allows, so its lower bounds stay true.
+          - python-version: "3.10"
+            deps: minimum
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install (latest allowed versions)
+        if: matrix.deps == 'latest'
+        run: pip install -r requirements-dev.txt
+      - name: Install (lowest allowed versions)
+        if: matrix.deps == 'minimum'
+        run: |
+          sed -e 's/>=/==/' -e 's/,<.*//' requirements.txt > minimum.txt
+          cat minimum.txt
+          pip install -r minimum.txt pytest ruff
+      - name: Lint
+        run: ruff check .
+      - name: Test (offline: a local fake site stands in for MyAnimeList and Jikan-Edge)
+        run: python -m pytest
