@@ -17,3 +17,7 @@ test.py
 .vscode
 
 *.csv
+
+.pytest_cache/
+
+.ruff_cache/

@@ -1,0 +1,47 @@
+{
+ "data": [
+  {
+   "malId": 52991,
+   "title": "Sousou no Frieren",
+   "imageUrl": "https://cdn.myanimelist.net/images/anime/1015/138006.jpg",
+   "score": 9.24,
+   "type": "TV",
+   "episodes": 28,
+   "startDate": "Sep 2023 - Mar 2024",
+   "members": 1539770
+  },
+  {
+   "malId": 5114,
+   "title": "Fullmetal Alchemist: Brotherhood",
+   "imageUrl": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
+   "score": 9.11,
+   "type": "TV",
+   "episodes": 64,
+   "startDate": "Apr 2009 - Jul 2010",
+   "members": 3752822
+  },
+  {
+   "malId": 61316,
+   "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+   "imageUrl": "https://cdn.myanimelist.net/images/anime/1540/155824.jpg",
+   "score": 9.07,
+   "type": "TV",
+   "episodes": 19,
+   "startDate": "Apr 2026 - Sep 2026",
+   "members": 366946
+  }
+ ],
+ "meta": {
+  "cached": true,
+  "stale": false,
+  "refreshFailed": false,
+  "fetchedAt": "2026-11-03T18:09:59.110Z",
+  "pagination": {
+   "page": 1,
+   "limit": 50,
+   "count": 3,
+   "total": null,
+   "hasNextPage": true
+  }
+ }
+}
