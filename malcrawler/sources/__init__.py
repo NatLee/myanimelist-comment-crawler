@@ -7,8 +7,10 @@ from .base import RankingPage, ReviewPage, Source, SourceError, WorkRef
 from .html import HtmlSource
 from .jikan_edge import JikanEdgeSource
 
-SOURCES: dict[str, type[Source]] = {cls.name: cls for cls in (HtmlSource, JikanEdgeSource)}
-DEFAULT_SOURCE = HtmlSource.name
+SOURCES: dict[str, type[Source]] = {cls.name: cls for cls in (JikanEdgeSource, HtmlSource)}
+# jikan-edge since 2026-11-04 (owner's decision): MyAnimeList's robots.txt blocks Scrapy, so the
+# original html source stops at its first request. html stays available with --source html.
+DEFAULT_SOURCE = JikanEdgeSource.name
 
 
 def make_source(name: str, settings: Settings) -> Source:

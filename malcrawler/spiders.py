@@ -2,7 +2,7 @@
 
 Both take the same spider arguments (``scrapy runspider ... -a name=value`` or the script options):
 
-- ``source``: where to read from, ``html`` (default) or ``jikan-edge``; see ``malcrawler.sources``.
+- ``source``: where to read from, ``jikan-edge`` (default) or ``html``; see ``malcrawler.sources``.
 - ``ids``: comma-separated MyAnimeList IDs to crawl instead of everything, e.g. ``5114,11979``.
 - ``config``: path of the settings file (default ``setting.ini``).
 - ``resume`` (reviews only): skip titles finished in an earlier run and continue unfinished ones.
