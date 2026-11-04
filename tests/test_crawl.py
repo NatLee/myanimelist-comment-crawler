@@ -52,7 +52,7 @@ def test_html_source_end_to_end(site, workdir):
     site.add_fixture(FMAB_PATH + REVIEWS_QUERY + "1", "html/reviews_5114_p1.html")
     site.add_fixture(FMAB_PATH + REVIEWS_QUERY + "2", "html/reviews_5114_p2.html")
 
-    info = run(workdir, "info_spider.py", "--delay", "0")
+    info = run(workdir, "info_spider.py", "--source", "html", "--delay", "0")
     assert info.returncode == 0
     assert "1 saved" in info.stderr and "HTTP 404" in info.stderr
     titles = [path for path in site.requests if path.startswith("/anime/")]
@@ -63,7 +63,7 @@ def test_html_source_end_to_end(site, workdir):
     saved = json.loads((workdir / "tmp/info/005114.json").read_text(encoding="utf-8"))
     assert saved["engName"] == "Fullmetal Alchemist: Brotherhood"
 
-    reviews = run(workdir, "review_spider.py", "--delay", "0")
+    reviews = run(workdir, "review_spider.py", "--source", "html", "--delay", "0")
     assert reviews.returncode == 0
     assert query(workdir, "SELECT COUNT(*) FROM reviews") == [(4,)]
     # Regression: after the last page the old spider still asked for the next (empty) page.
@@ -80,10 +80,19 @@ def test_robots_txt_that_blocks_scrapy_stops_the_crawl_with_a_hint(site, workdir
     site.add("/robots.txt", "User-agent: Scrapy\nDisallow: /\n")  # what myanimelist.net says (2026-11-04)
     site.add_fixture("/topanime.php?limit=0", "html/topanime_limit0.html")
 
-    result = run(workdir, "info_spider.py", "--delay", "0")
+    result = run(workdir, "info_spider.py", "--source", "html", "--delay", "0")
     assert result.returncode == 1
     assert "robots.txt does not allow" in result.stderr and "--source jikan-edge" in result.stderr
     assert site.requests == ["/robots.txt"]
+
+
+def test_jikan_edge_is_the_default_source(site, workdir):
+    # Owner's decision of 2026-11-04: html stays available, but MAL's robots.txt blocks it.
+    site.add_fixture("/v1/anime/5114", "jikan_edge/anime_5114.json")
+    result = run(workdir, "info_spider.py", "--ids", "5114", "--delay", "0")
+    assert result.returncode == 0 and "source jikan-edge" in result.stderr
+    assert site.requests == ["/v1/anime/5114"]
+    assert "(default: jikan-edge)" in run(workdir, "info_spider.py", "--help").stdout
 
 
 def test_jikan_edge_source_end_to_end_with_resume(site, workdir):
@@ -117,9 +126,9 @@ def test_rate_limit_is_retried_after_the_servers_pause(site, workdir):
 
 def test_scrapy_runspider_command_still_works(site, workdir):
     site.add_fixture("/v1/anime/5114", "jikan_edge/anime_5114.json")
-    result = subprocess.run(
+    result = subprocess.run(  # no -a source=...: the old command picks up the new default too
         [sys.executable, "-m", "scrapy", "runspider", str(ROOT / "info_spider.py"), "--nolog",
-         "-a", "source=jikan-edge", "-a", "ids=5114", "-s", "DOWNLOAD_DELAY=0"],
+         "-a", "ids=5114", "-s", "DOWNLOAD_DELAY=0"],
         cwd=workdir, capture_output=True, text=True, encoding="utf-8", timeout=120)
     assert result.returncode == 0, result.stderr
     assert "DeprecationWarning" not in result.stderr, result.stderr

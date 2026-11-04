@@ -51,7 +51,7 @@ def crawl_parser(spider_cls: type[InfoSpider] | type[ReviewSpider]) -> argparse.
         prog=f"python {script}",
         description=f"Crawl {what} into the SQLite database named in setting.ini.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=f"sources:\n{sources}\n\nexample:\n  python {script} --source jikan-edge --ids {example_ids}",
+        epilog=f"sources:\n{sources}\n\nexample:\n  python {script} --ids {example_ids}",
     )
     parser.add_argument("--source", choices=list(SOURCES), default=DEFAULT_SOURCE,
                         help=f"where to read from (default: {DEFAULT_SOURCE})")

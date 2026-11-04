@@ -22,8 +22,8 @@ tables and columns either way.
 
 | How you run it | Status | Why |
 |---|---|---|
-| `--source jikan-edge` | **Works** | Anime info, the ranking and reviews all come through [Jikan-Edge](https://jikan.lucashdo.com), an open-source API over public MAL data. |
-| `--source html` (the default, as in 2023) | **Stops at the first request** | MAL's [robots.txt](https://myanimelist.net/robots.txt) now lists `Scrapy` under `Disallow: /`. The crawler respects that and tells you to switch sources. The page parsers themselves still match MAL's pages of 2026-11-04 (see `tests/fixtures/html`). |
+| `--source jikan-edge` (the default since 2026-11-04) | **Works** | Anime info, the ranking and reviews all come through [Jikan-Edge](https://jikan.lucashdo.com), an open-source API over public MAL data. |
+| `--source html` (the default until 2026-11-04) | **Stops at the first request** | MAL's [robots.txt](https://myanimelist.net/robots.txt) now lists `Scrapy` under `Disallow: /`. The crawler respects that and tells you to switch sources. The page parsers themselves still match MAL's pages of 2026-11-04 (see `tests/fixtures/html`). |
 | The 2023 code, freshly installed | **Did nothing** | Scrapy 2.16 (May 2026) stopped calling `start_requests()`, so both spiders exited silently. Fixed here. |
 | Jikan v4 (`api.jikan.moe`) | **Gone** | The public Jikan API [shut down on 2026-10-01](https://github.com/jikan-me/jikan-rest/issues/613); Jikan-Edge is one of the replacements its maintainer suggests. |
 
@@ -80,59 +80,60 @@ pip install -r requirements.txt
 These commands and outputs are from a real run on 2026-11-04.
 
 ```console
-$ python info_spider.py --source jikan-edge --ids 5114,11979
-23:44:58 INFO    info_spider: source jikan-edge (Jikan-Edge JSON API (community replacement for the retired public Jikan API)), database anime.db
-23:45:00 INFO    [1] saved 5114 Fullmetal Alchemist: Brotherhood
-23:45:01 INFO    [2] saved 11979 Puella Magi Madoka Magica the Movie Part 2: Eternal
-23:45:01 INFO    info_spider finished (finished): 2 saved, 0 already saved, 0 failed
+$ python info_spider.py --ids 5114,11979
+00:08:01 INFO    info_spider: source jikan-edge (Jikan-Edge JSON API (community replacement for the retired public Jikan API)), database anime.db
+00:08:03 INFO    [1] saved 5114 Fullmetal Alchemist: Brotherhood
+00:08:05 INFO    [2] saved 11979 Puella Magi Madoka Magica the Movie Part 2: Eternal
+00:08:05 INFO    info_spider finished (finished): 2 saved, 0 already saved, 0 failed
 
-$ python review_spider.py --source jikan-edge --ids 11979
-23:45:02 INFO    review_spider: source jikan-edge (Jikan-Edge JSON API (community replacement for the retired public Jikan API)), database anime.db
-23:45:03 INFO    [1/1] 11979 Mahou_Shoujo_Madoka%E2%98%86Magica_Movie_2__Eien_no_Monogatari: page 1, 20 reviews
-23:45:05 INFO    [1/1] 11979 Mahou_Shoujo_Madoka%E2%98%86Magica_Movie_2__Eien_no_Monogatari: page 2, 1 reviews (last page)
-23:45:05 INFO    review_spider finished (finished): 21 reviews saved from 1 of 1 titles, 0 failed requests
+$ python review_spider.py --ids 11979
+00:08:06 INFO    review_spider: source jikan-edge (Jikan-Edge JSON API (community replacement for the retired public Jikan API)), database anime.db
+00:08:08 INFO    [1/1] 11979 Mahou_Shoujo_Madoka%E2%98%86Magica_Movie_2__Eien_no_Monogatari: page 1, 20 reviews
+00:08:10 INFO    [1/1] 11979 Mahou_Shoujo_Madoka%E2%98%86Magica_Movie_2__Eien_no_Monogatari: page 2, 1 reviews (last page)
+00:08:10 INFO    review_spider finished (finished): 21 reviews saved from 1 of 1 titles, 0 failed requests
 
 $ python db_to_kaggle.py
-23:45:06 INFO    wrote anime_list.csv
-23:45:06 INFO    wrote reviews.csv
+00:08:12 INFO    wrote anime_list.csv
+00:08:12 INFO    wrote reviews.csv
 ```
 
-The default HTML source, today:
+The original HTML source is still there with `--source html`. Today it stops at MAL's robots.txt and exits with status 1:
 
 ```console
-$ python info_spider.py --ids 11979
-23:45:23 INFO    info_spider: source html (MyAnimeList web pages (original method; MAL's robots.txt currently blocks it)), database anime.db
-23:45:24 ERROR   Stopping: Scrapy refused to send https://myanimelist.net/anime/11979 (Forbidden by robots.txt). The site's robots.txt does not allow this crawler there. Try another source, e.g. --source jikan-edge (see README).
-23:45:24 INFO    info_spider finished (request_refused): 0 saved, 0 already saved, 0 failed
+$ python info_spider.py --source html --ids 11979
+00:08:13 INFO    info_spider: source html (MyAnimeList web pages (original method; MAL's robots.txt currently blocks it)), database anime.db
+00:08:14 ERROR   Stopping: Scrapy refused to send https://myanimelist.net/anime/11979 (Forbidden by robots.txt). The site's robots.txt does not allow this crawler there. Try another source, e.g. --source jikan-edge (see README).
+00:08:14 INFO    info_spider finished (request_refused): 0 saved, 0 already saved, 0 failed
 ```
 
 Leave out `--ids` to crawl everything: the whole ranking for `info_spider.py`, every saved title for
 `review_spider.py`. At the default pace that is many hours; stop with Ctrl+C at any time and continue with
-`python review_spider.py --source jikan-edge --resume`.
+`python review_spider.py --resume`.
 
 ## Usage
 
 ```text
-python info_spider.py   [--source {html,jikan-edge}] [--ids ID,ID] [--delay SECONDS] [--config FILE] [-v]
-python review_spider.py [--source {html,jikan-edge}] [--ids ID,ID] [--resume] [--delay SECONDS] [--config FILE] [-v]
+python info_spider.py   [--source {jikan-edge,html}] [--ids ID,ID] [--delay SECONDS] [--config FILE] [-v]
+python review_spider.py [--source {jikan-edge,html}] [--ids ID,ID] [--resume] [--delay SECONDS] [--config FILE] [-v]
 python db_to_kaggle.py  [--config FILE] [--out-dir DIR]
 ```
 
 | Option | Default | What it does |
 |---|---|---|
-| `--source` | `html` | Where to read from: MAL's web pages or the Jikan-Edge API. |
+| `--source` | `jikan-edge` | Where to read from: the Jikan-Edge API, or MAL's web pages (`html`, the default until 2026-11-04). |
 | `--ids` | everything | Only these MAL IDs, comma-separated (the number in `myanimelist.net/anime/5114/...`). |
 | `--resume` | off | Reviews: skip titles finished earlier, restart unfinished ones at their last saved page. |
 | `--delay` | per source | Seconds between requests. Defaults: html 7 (info) / 4 (reviews), jikan-edge 2. |
 | `--config` | `setting.ini` | Settings file to use. |
 | `-v`, `--verbose` | off | Also print Scrapy's own log. |
 
-`--help` on each script prints the same. The 2023 commands still work, with spider arguments in place of
-the options:
+`--help` on each script prints the same. The 2023 commands still work and use the same default source,
+with spider arguments in place of the options:
 
 ```bash
-scrapy runspider info_spider.py --nolog -a source=jikan-edge -a ids=5114
-scrapy runspider review_spider.py --nolog -a source=jikan-edge -a resume=1
+scrapy runspider info_spider.py --nolog -a ids=5114
+scrapy runspider review_spider.py --nolog -a resume=1
+scrapy runspider info_spider.py --nolog -a source=html    # the original page parser
 ```
 
 When the crawl has to stop (robots.txt refuses it, there is nothing to crawl, five titles in a row fail),
